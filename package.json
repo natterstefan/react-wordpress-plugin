@@ -1,0 +1,89 @@
+{
+  "name": "react-wordpress-plugin",
+  "version": "0.0.1",
+  "private": true,
+  "description": "React WordPress Plugin Boilerplate with a React admin interface and a Docker Development Setup.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natterstefan/react-wordpress-plugin"
+  },
+  "author": "Stefan Natter <stefan@natter.at> (https://github.com/natterstefan)",
+  "contributors": [
+    { "name" : "Lukas Ender", "url" : "https://github.com/lumannnn" },
+    { "name" : "Stefan Natter", "url" : "https://github.com/natterstefan" }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/natterstefan/react-wordpress-plugin/issues"
+  },
+  "homepage": "",
+  "scripts": {
+    "analyse": "cross-env NODE_ENV=production BABEL_ENV=production webpack -p --config webpack/prod.analyse.config.js",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack -p --config webpack/prod.config.js",
+    "build:dev": "webpack --config webpack/dev.config.js",
+    "format": "eslint --fix ./src/**/*.js",
+    "format:scss": "stylelint --fix ./src/**/*.scss",
+    "lint": "eslint ./src/**/*.js",
+    "lint:scss": "stylelint ./src/**/*.scss",
+    "lint:php": "phplint './src/**/*.php'",
+    "precommit": "lint-staged",
+    "postinstall": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "watch": "webpack --config webpack/dev.config.js --watch"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "npm run format:scss",
+      "git add"
+    ],
+    "*.php": [
+      "npm run lint:php"
+    ],
+    "*.js": [
+      "npm run format",
+      "git add",
+      "jest --findRelatedTests"
+    ]
+  },
+  "devDependencies": {
+    "@natterstefan/eslint-config-ns": "git+https://github.com/natterstefan/eslint-config-ns.git#master",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.4",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.13",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "copy-webpack-plugin": "4.5.1",
+    "cross-env": "5.1.6",
+    "css-loader": "0.28.11",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-to-json": "3.3.4",
+    "error-overlay-webpack-plugin": "0.1.5",
+    "eslint": "4.19.1",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "filemanager-webpack-plugin": "1.0.26",
+    "husky": "0.14.3",
+    "jest": "23.1.0",
+    "lint-staged": "7.1.2",
+    "moxios": "0.4.0",
+    "node-sass": "4.9.0",
+    "phplint": "2.0.0",
+    "sass-loader": "7.0.1",
+    "webpack": "4.9.1",
+    "webpack-cli": "2.1.4",
+    "webpack-jarvis": "0.3.2",
+    "webpack-merge": "4.1.2"
+  },
+  "dependencies": {
+    "axios": "0.18.0",
+    "debug": "3.1.0",
+    "lodash.get": "4.4.2",
+    "prop-types": "15.6.1",
+    "react": "16.4.0",
+    "react-dom": "16.4.0"
+  }
+}

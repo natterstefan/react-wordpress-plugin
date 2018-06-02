@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "chrome": 54,
+          "safari": 10,
+          "edge": 12,
+          "ie": 11
+        }
+      }
+    ],
+    "stage-2",
+    "react"
+  ],
+  "env": {
+    "production": {
+      "plugins": ["transform-react-remove-prop-types"]
+    }
+  }
+}
