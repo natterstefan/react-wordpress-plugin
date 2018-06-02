@@ -1,5 +1,6 @@
-tmp
 .DS_STORE
+coverage
 dist
 dist-build
 node_modules
+tmp

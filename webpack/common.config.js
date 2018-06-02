@@ -132,26 +132,7 @@ module.exports = {
               __dirname,
               '..',
               'dist-build',
-              'css',
-              'admin.styles.css.map'
-            ),
-            destination: path.resolve(__dirname, '..', 'dist', 'admin', 'css')
-          },
-          {
-            source: path.resolve(
-              __dirname,
-              '..',
-              'dist-build',
               'admin.bundled.js'
-            ),
-            destination: path.resolve(__dirname, '..', 'dist', 'admin', 'js')
-          },
-          {
-            source: path.resolve(
-              __dirname,
-              '..',
-              'dist-build',
-              'admin.bundled.js.map'
             ),
             destination: path.resolve(__dirname, '..', 'dist', 'admin', 'js')
           },

@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/natterstefan/react-wordpress-plugin/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/natterstefan/react-wordpress-plugin",
   "scripts": {
     "analyse": "cross-env NODE_ENV=production BABEL_ENV=production webpack -p --config webpack/prod.analyse.config.js",
     "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack -p --config webpack/prod.config.js",
