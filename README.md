@@ -1,5 +1,6 @@
 # React-WordPress-Plugin
 
+[![Build Status](https://travis-ci.org/natterstefan/react-wordpress-plugin.svg?branch=master)](https://travis-ci.org/natterstefan/react-wordpress-plugin)
 [![GitHub issues](https://img.shields.io/github/issues/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/issues)
 [![Dependencies](https://img.shields.io/david/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/blob/master/package.json)
 [![DevDependencies](https://img.shields.io/david/dev/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/blob/master/package.json)
