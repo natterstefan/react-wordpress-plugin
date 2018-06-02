@@ -1,5 +1,11 @@
 # React-WordPress-Plugin
 
+[![GitHub issues](https://img.shields.io/github/issues/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/issues)
+[![Dependencies](https://img.shields.io/david/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/blob/master/package.json)
+[![DevDependencies](https://img.shields.io/david/dev/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/blob/master/package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/natterstefan/react-wordpress-plugin/badge.svg)](https://snyk.io/test/github/natterstefan/react-wordpress-plugin)
+[![GitHub license](https://img.shields.io/github/license/natterstefan/react-wordpress-plugin.svg)](https://github.com/natterstefan/react-wordpress-plugin/blob/master/LICENCE)
+
 React-WordPress-Plugin enables you to use React on your admin-page
 and on the public-page alongside a fully functionally WordPress plugin.
 
