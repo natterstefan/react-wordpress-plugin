@@ -3,12 +3,19 @@ import PropTypes from 'prop-types'
 import get from 'lodash.get'
 import invoke from 'lodash.invoke'
 
+// Material-UI
+import Typography from '@material-ui/core/Typography'
+
 // NOTE i18n
 // - https://www.npmjs.com/package/po2json
 // - https://github.com/yahoo/react-intl/issues/1100#issuecomment-394096631
 // - extract from react-intl ==> and do not mix w/ wordpress ==> https://github.com/yahoo/babel-plugin-react-intl
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { injectIntl, intlShape } from 'react-intl'
 import messages from './languages'
+
+import Tabs from '../tabs'
+import ManagePage from '../pages/manage'
+import SettingsPage from '../pages/settings'
 
 class App extends React.Component {
   static parseData(data) {
@@ -38,47 +45,36 @@ class App extends React.Component {
   }
 
   render() {
-    const { app, intl, wpGlobals } = this.props
+    const { app, intl } = this.props
 
     // i18n
     const title = intl.formatMessage(App.getTranslation('react.settings.title'))
-    const appData = get(app, 'data', {})
-    const currentData = App.parseData(appData)
 
     return (
       <div className="app-plugin-name">
-        <h1>{title}</h1>
+        <Typography variant="headline" component="h1">
+          {title}
+        </Typography>
         {app.isLoading && (
           <div style={{ margin: '20px auto', textAlign: 'center' }}>Loading data...</div>
         )}
         {!app.isLoading && (
-          <React.Fragment>
-            <div>
-              <FormattedMessage
-                id="react.settings.intro"
-                defaultMessage="This is what I get from the options table so far:"
-              />
-              <p>
-                <code>{currentData}</code>
-              </p>
-            </div>
-            <div>
-              <FormattedMessage
-                id="react.settings.wpGlobals"
-                defaultMessage="This is what I get as wpGlobals so far:"
-              />
-              <p>
-                <code>{App.parseData(wpGlobals)}</code>
-              </p>
-            </div>
-            <div>
-              <FormattedMessage id="react.settings.asset" defaultMessage="Example static file:" />
-              <p>
-                {appData &&
-                  appData.asset_path && <img src={this.getAsset('img/350x150.png')} alt="" />}
-              </p>
-            </div>
-          </React.Fragment>
+          <div className="app-plugin-name__tabs">
+            <Tabs
+              tabs={[
+                {
+                  name: 'Manage',
+                  component: ManagePage,
+                  props: this.props,
+                },
+                {
+                  name: 'Settings',
+                  component: SettingsPage,
+                  props: this.props,
+                },
+              ]}
+            />
+          </div>
         )}
       </div>
     )
@@ -89,13 +85,11 @@ App.propTypes = {
   app: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   actions: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   intl: intlShape.isRequired,
-  wpGlobals: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 }
 
 App.defaultProps = {
   app: {},
   actions: {},
-  wpGlobals: {},
 }
 
 export default injectIntl(App)
