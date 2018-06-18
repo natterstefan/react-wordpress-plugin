@@ -221,13 +221,14 @@ here:
 | Technology                                        | Description                                                                                                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [React](https://facebook.github.io/react/)        | React is a declarative, efficient, and flexible JavaScript library for building user interfaces.                                                                   |
+| [react-intl](https://github.com/yahoo/react-intl) | Internationalize React apps.                                                                                                                                       |
+| [Redux](https://github.com/reduxjs/redux)         | Predictable state container for JavaScript apps                                                                                                                    |
 | [Babel](http://babeljs.io)                        | Babel is a JavaScript transpiler that converts edge JavaScript into plain old ES5 JavaScript that can run in any browser (even the old ones).                      |
 | [Webpack](http://webpack.js.org)                  | webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling or packaging. |
 | [Jest](https://facebook.github.io/jest/)          | Jest is the de facto unit testing framework for ReactJS project.                                                                                                   |
 | [Enzyme](https://github.com/airbnb/enzyme)        | JavaScript library for testing React components.                                                                                                                   |
 | [ESLint](http://eslint.org/)                      | Linting utility for JavaScript.                                                                                                                                    |
 | [Prettier](https://github.com/prettier/prettier)  | Prettier is an opinionated code formatter.                                                                                                                         |
-| [react-intl](https://github.com/yahoo/react-intl) | Internationalize React apps.                                                                                                                                       |
 
 ## Maintainers
 

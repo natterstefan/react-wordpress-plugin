@@ -1,5 +1,5 @@
 import moxios from 'moxios'
-import apiClient from './api-client'
+import apiClient from '../api-client'
 
 describe('utils/apiClient', () => {
   beforeEach(() => {

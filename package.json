@@ -82,6 +82,7 @@
     "moxios": "0.4.0",
     "node-sass": "4.9.0",
     "phplint": "2.0.0",
+    "redux-mock-store": "1.5.3",
     "react-test-renderer": "16.4.1",
     "sass-loader": "7.0.1",
     "webpack": "4.9.1",
@@ -95,11 +96,17 @@
     "intl": "1.2.5",
     "lodash.find": "4.6.0",
     "lodash.get": "4.4.2",
+    "lodash.invoke": "4.5.2",
     "lodash.map": "4.6.0",
+    "lodash.merge": "4.6.1",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-intl": "2.4.0",
-    "react-intl-translations-manager": "5.0.3"
+    "react-intl-translations-manager": "5.0.3",
+    "react-redux": "5.0.7",
+    "redux": "4.0.0",
+    "redux-devtools-extension": "2.13.2",
+    "redux-thunk": "2.3.0"
   }
 }
