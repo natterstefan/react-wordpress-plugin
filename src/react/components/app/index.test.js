@@ -1,12 +1,12 @@
 import React from 'react'
-import { shallow } from 'enzyme'
 import App from './'
+import { createComponentWithIntl } from '../../../../jest/intl-enzyme-setup'
 
-// useful links
+// useful tipps for testing with JEST
 // - https://marmelab.com/blog/2015/06/24/jest-in-practice.html
 describe('Components/App', () => {
   it('renders app component', () => {
-    const wrapper = shallow(<App />)
+    const wrapper = createComponentWithIntl(<App />)
     expect(wrapper).toMatchSnapshot()
   })
 })

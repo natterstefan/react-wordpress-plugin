@@ -54,6 +54,7 @@ class PLUGINNAME_Rest_Api extends WP_Rest_Controller {
     $result = (object) [
       data => [
         asset_path => plugin_dir_url( dirname(__FILE__) ) . 'static',
+        language => get_bloginfo('language'),
         name => $this->plugin_name,
         options => $this->options,
         translation_slug => $this->translation_slug,

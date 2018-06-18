@@ -8,6 +8,10 @@ const pkg = require('../package.json')
 const SRC_DIR = path.resolve(__dirname, '..', 'src')
 const BUILD_DIR = path.resolve(__dirname, '..', 'dist')
 
+// custom plugins for react-wordpress-plugin
+const i18nGenerator = require('./plugins/i18n')
+const languages = ['en', 'de']
+
 const extractSass = new ExtractTextPlugin({
   filename: 'css/[name].css'
 })
@@ -39,7 +43,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.css', '.scss']
+    extensions: ['.js', '.json', '.css', '.scss']
   },
 
   module: {
@@ -87,7 +91,7 @@ module.exports = {
           to: BUILD_DIR
         },
         {
-          context: './src/wordpress',
+          context: './src/wordpress/languages',
           from:
             path.resolve(__dirname, '..', 'src', 'wordpress') +
             '/languages/*.pot',
@@ -158,6 +162,7 @@ module.exports = {
         ]
         // delete: [path.resolve(__dirname, '..', 'dist-build')] // will cause errors when watching files
       }
-    })
+    }),
+    new i18nGenerator(`./dist-build/locales/{${languages.join(',')}}.json`, './dist/static/languages/', languages)
   ]
 }

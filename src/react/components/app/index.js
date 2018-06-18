@@ -2,19 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash.get'
 
+// NOTE i18n
+// - https://www.npmjs.com/package/po2json
+// - https://github.com/yahoo/react-intl/issues/1100#issuecomment-394096631
+// - extract from react-intl ==> and do not mix w/ wordpress ==> https://github.com/yahoo/babel-plugin-react-intl
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import messages from './languages'
+
+// helpers
 import apiClient from '../../utils/api-client'
 
+// logging and debugging
 const debug = require('debug')('App')
 
+// REACT component
 class App extends React.Component {
-  // utilities
   static parseData(data) {
     try {
       return JSON.stringify(data)
     } catch (e) {
-      return 'no appContext'
+      return 'failed to parse data'
     }
   }
+
+  static getTranslation = id => get(messages, `['${id}']`)
 
   constructor(props) {
     super(props)
@@ -24,6 +35,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // load data from the WP API
     this.getData()
   }
 
@@ -47,7 +59,10 @@ class App extends React.Component {
   }
 
   render() {
-    const title = 'Hello from REACT.'
+    const { intl, wpGlobals } = this.props
+
+    // i18n
+    const title = intl.formatMessage(App.getTranslation('react.settings.title'))
     const appContext = get(this.state, 'appContext', {})
     const currentData = App.parseData(appContext)
 
@@ -55,19 +70,25 @@ class App extends React.Component {
       <div className="app-plugin-name">
         <h1>{title}</h1>
         <div>
-          This is what I get from the options table so far:
+          <FormattedMessage
+            id="react.settings.intro"
+            defaultMessage="This is what I get from the options table so far:"
+          />
           <p>
             <code>{currentData}</code>
           </p>
         </div>
         <div>
-          This is what I get in my `wpGlobals` so far:
+          <FormattedMessage
+            id="react.settings.wpGlobals"
+            defaultMessage="This is what I get as wpGlobals so far:"
+          />
           <p>
-            <code>{App.parseData(this.props.wpGlobals)}</code>
+            <code>{App.parseData(wpGlobals)}</code>
           </p>
         </div>
         <div>
-          Example static file
+          <FormattedMessage id="react.settings.asset" defaultMessage="Example static file:" />
           <p>
             {appContext &&
               appContext.asset_path && <img src={this.getAsset('img/350x150.png')} alt="" />}
@@ -80,10 +101,11 @@ class App extends React.Component {
 
 App.propTypes = {
   wpGlobals: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  intl: intlShape.isRequired,
 }
 
 App.defaultProps = {
   wpGlobals: {},
 }
 
-export default App
+export default injectIntl(App)

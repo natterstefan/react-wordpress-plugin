@@ -95,12 +95,12 @@ class PLUGINNAME_Admin {
       // inject some wp specific variables into the admin script, they are
       // available in the wpGlobals object afterwards
       wp_localize_script($this->plugin_name, 'wpGlobals', array(
+        'asset_path' => plugin_dir_url( dirname(__FILE__) ) . 'static',
+        'language' => get_bloginfo('language'),
         'namespace' => $this->api_namespace,
         'nonce' => wp_create_nonce('wp_rest'),
         'root' => esc_url_raw(rest_url()),
       ));
     }
-
   }
-
 }

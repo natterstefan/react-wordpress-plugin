@@ -3,4 +3,7 @@ coverage
 dist
 dist-build
 node_modules
+src/wordpress/languages/*.json
+src/wordpress/languages/*.po
+src/wordpress/languages/*.mo
 tmp

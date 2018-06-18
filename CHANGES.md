@@ -9,3 +9,4 @@ adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 ### Added
 
 * Basic project setup of a WordPress plugin with a React admin interface
+  * with i18n support thanks to [react-intl](https://github.com/yahoo/react-intl)

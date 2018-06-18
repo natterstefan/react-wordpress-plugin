@@ -5,10 +5,12 @@ exports[`Components/App renders app component 1`] = `
   className="app-plugin-name"
 >
   <h1>
-    Hello from REACT.
+    PLUGINNAME Settings
   </h1>
   <div>
-    This is what I get from the options table so far:
+    <span>
+      This is what I get from the options table so far:
+    </span>
     <p>
       <code>
         {}
@@ -16,7 +18,9 @@ exports[`Components/App renders app component 1`] = `
     </p>
   </div>
   <div>
-    This is what I get in my \`wpGlobals\` so far:
+    <span>
+      This is what I get as wpGlobals so far:
+    </span>
     <p>
       <code>
         {}
@@ -24,7 +28,9 @@ exports[`Components/App renders app component 1`] = `
     </p>
   </div>
   <div>
-    Example static file
+    <span>
+      Example static file:
+    </span>
     <p />
   </div>
 </div>
