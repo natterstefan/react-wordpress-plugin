@@ -28,7 +28,7 @@ services:
           - db
         volumes:
             - ../dist:/var/www/html/wp-content/plugins/plugin-name
-        image: wordpress:4.9.5-php7.0-apache
+        image: wordpress:4.9.6-php7.0-apache
         ports:
             - 8000:80
         restart: always
