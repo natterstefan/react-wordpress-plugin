@@ -1,15 +1,12 @@
-import React from 'react'
+import { connect } from 'react-redux'
+import get from 'lodash.get'
 
-// material-ui
-import Typography from '@material-ui/core/Typography'
+import ManagePage from './component'
 
-// TODO
-// - attach to REDUX STORE
-const ManagePage = () => (
-  <div>
-    <Typography component="p">Some content</Typography>
-  </div>
-)
-ManagePage.displayName = 'ManagePage'
+const mapStateToProps = state => ({
+  app: get(state, 'app', {}),
+})
 
-export default ManagePage
+const mapDispatchToProps = () => ({})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ManagePage)

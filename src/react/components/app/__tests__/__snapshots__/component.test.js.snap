@@ -4,34 +4,25 @@ exports[`Components/App renders app component 1`] = `
 <div
   className="app-plugin-name"
 >
-  <h1>
-    PLUGINNAME Settings
-  </h1>
-  <div>
-    <span>
-      This is what I get from the options table so far:
-    </span>
-    <p>
-      <code>
-        {}
-      </code>
-    </p>
-  </div>
-  <div>
-    <span>
-      This is what I get as wpGlobals so far:
-    </span>
-    <p>
-      <code>
-        {}
-      </code>
-    </p>
-  </div>
-  <div>
-    <span>
-      Example static file:
-    </span>
-    <p />
+  <div
+    className="app-plugin-name__container"
+  >
+    <WithStyles(PersistentDrawer)
+      content={
+        Array [
+          Object {
+            "component": [Function],
+            "icon": [Function],
+            "name": "Manage",
+          },
+          Object {
+            "component": [Function],
+            "icon": [Function],
+            "name": "Settings",
+          },
+        ]
+      }
+    />
   </div>
 </div>
 `;

@@ -1,21 +1,14 @@
-import { connect } from 'react-redux'
-import get from 'lodash.get'
+import React from 'react'
+import Drawer from '../drawer'
+import getPages from '../pages/config'
 
-import App from './component'
-import { initApp as initAction } from '../../actions/app'
+const App = props => (
+  <div className="app-plugin-name">
+    <div className="app-plugin-name__container">
+      <Drawer content={getPages(props)} />
+    </div>
+  </div>
+)
 
-const mapStateToProps = state => ({
-  app: get(state, 'app', {}),
-})
-
-const mapDispatchToProps = dispatch => ({ dispatch })
-
-const mergeProps = (stateProps, dispatchProps, ownProps) => ({
-  ...ownProps,
-  ...stateProps,
-  actions: {
-    initApp: () => dispatchProps.dispatch(initAction()),
-  },
-})
-
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(App)
+App.displayName = 'App'
+export default App

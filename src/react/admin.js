@@ -52,7 +52,7 @@ const renderApp = async () => {
     render(
       <Provider store={store}>
         <IntlProvider locale={lang} messages={result.data}>
-          <App wpGlobals={wpGlobals} />
+          <App />
         </IntlProvider>
       </Provider>,
       document.getElementById('plugin-name-app'),

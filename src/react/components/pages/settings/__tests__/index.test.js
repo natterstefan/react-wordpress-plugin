@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 
 const mockStore = configureMockStore([thunk])
 
-describe('Component/AppContainer', () => {
+describe('Pages/Settings', () => {
   let store
   const mockDispatch = jest.fn()
   const mockInitApp = jest.fn()
@@ -22,19 +22,19 @@ describe('Component/AppContainer', () => {
     mockDispatch.mockReset()
 
     // see https://github.com/facebook/jest/issues/2567#issuecomment-345805358
-    jest.mock('../../../actions/app', () => ({
+    jest.mock('../../../../actions/app', () => ({
       initApp: mockInitApp,
     }))
   })
 
   afterAll(() => {
     jest.resetModules()
-    jest.unmock('../../../actions/app')
+    jest.unmock('../../../../actions/app')
   })
 
   test('should get data from the store and prepare props without throwing an error', () => {
-    const AppContainer = require('../').default
-    const wrapper = shallow(<AppContainer store={store} someProp />)
+    const SettingsPageContainer = require('../').default
+    const wrapper = shallow(<SettingsPageContainer store={store} someProp />)
 
     const expectedContainerProps = {
       app: {
@@ -54,8 +54,8 @@ describe('Component/AppContainer', () => {
   })
 
   test('should dispatch initApp when actions.initApp is invoked', () => {
-    const AppContainer = require('../').default
-    const wrapper = shallow(<AppContainer store={store} someProp />)
+    const SettingsPageContainer = require('../').default
+    const wrapper = shallow(<SettingsPageContainer store={store} someProp />)
 
     wrapper.props().actions.initApp()
     expect(store.dispatch).toHaveBeenCalledTimes(1)
