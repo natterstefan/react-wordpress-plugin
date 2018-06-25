@@ -10,3 +10,6 @@ global.wpGlobals = {
   nonce: 'example-nonce-123',
   root: 'https://example.com/wp-json/',
 }
+
+// helper to wait for something (eg. async actions)
+global.nextTick = () => new Promise(res => process.nextTick(res)) // eslint-disable-line

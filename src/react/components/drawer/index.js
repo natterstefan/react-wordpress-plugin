@@ -27,17 +27,15 @@ class PersistentDrawer extends React.Component {
     pageIndex: 0,
   }
 
-  onPageChange = newIndex => this.changePageIndex(newIndex)
+  onPageChange = newIndex => this.setState({ pageIndex: newIndex })
 
   handleDrawerOpen = () => this.setState({ open: true })
 
   handleDrawerClose = () => this.setState({ open: false })
 
-  changePageIndex = newIndex => this.setState({ pageIndex: newIndex })
-
   render() {
-    const { classes, theme } = this.props
-    const { open } = this.state
+    const { classes, content, theme } = this.props
+    const { open, pageIndex = 0 } = this.state
 
     const drawer = (
       <Drawer
@@ -55,7 +53,7 @@ class PersistentDrawer extends React.Component {
         </div>
         <Divider />
         <List>
-          <DrawerList list={this.props.content} onClick={this.onPageChange} />
+          <DrawerList list={content} onClick={this.onPageChange} />
         </List>
       </Drawer>
     )
@@ -89,7 +87,7 @@ class PersistentDrawer extends React.Component {
               [classes.contentShift]: open,
               [classes['contentShift-left']]: open,
             })}
-            component={this.props.content[this.state.pageIndex]}
+            component={content[pageIndex]}
             placeholder={() => <div className={classes.drawerHeader} />}
           />
         </div>

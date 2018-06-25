@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/shallow renders app component 1`] = `
+<div
+  className="PersistentDrawer-root-1 app-plugin-name"
+>
+  <div
+    className="PersistentDrawer-appFrame-2"
+  >
+    <WithStyles(AppBar)
+      className="PersistentDrawer-appBar-3"
+    >
+      <WithStyles(Toolbar)
+        disableGutters={true}
+      >
+        <WithStyles(IconButton)
+          aria-label="open drawer"
+          className="PersistentDrawer-menuButton-6"
+          color="inherit"
+          onClick={[Function]}
+        >
+          <pure(Menu) />
+        </WithStyles(IconButton)>
+        <WithStyles(Typography)
+          color="inherit"
+          noWrap={true}
+          variant="title"
+        >
+          <FormattedMessage
+            defaultMessage="PLUGIN-NAME Settings"
+            id="react.settings.title"
+            values={Object {}}
+          />
+        </WithStyles(Typography)>
+      </WithStyles(Toolbar)>
+    </WithStyles(AppBar)>
+    <WithStyles(Drawer)
+      anchor="left"
+      classes={
+        Object {
+          "paper": "PersistentDrawer-drawerPaper-8",
+        }
+      }
+      open={false}
+      variant="persistent"
+    >
+      <div
+        className="PersistentDrawer-drawerHeader-9"
+      >
+        <WithStyles(IconButton)
+          onClick={[Function]}
+        >
+          <pure(ChevronLeft) />
+        </WithStyles(IconButton)>
+      </div>
+      <WithStyles(Divider) />
+      <WithStyles(List)>
+        <DrawerList
+          list={
+            Array [
+              Object {
+                "component": [Function],
+                "icon": [Function],
+                "name": "Manage",
+                "props": undefined,
+              },
+              Object {
+                "component": [Function],
+                "icon": [Function],
+                "name": "Settings",
+                "props": undefined,
+              },
+            ]
+          }
+          onClick={[Function]}
+        />
+      </WithStyles(List)>
+    </WithStyles(Drawer)>
+    <WithStyles(PageWrapper)
+      className="PersistentDrawer-content-10 PersistentDrawer-content-left-11"
+      component={
+        Object {
+          "component": [Function],
+          "icon": [Function],
+          "name": "Manage",
+          "props": undefined,
+        }
+      }
+      placeholder={[Function]}
+    />
+  </div>
+</div>
+`;

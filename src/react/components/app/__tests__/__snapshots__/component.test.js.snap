@@ -14,11 +14,13 @@ exports[`Components/App renders app component 1`] = `
             "component": [Function],
             "icon": [Function],
             "name": "Manage",
+            "props": Object {},
           },
           Object {
             "component": [Function],
             "icon": [Function],
             "name": "Settings",
+            "props": Object {},
           },
         ]
       }
