@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/DrawerList renders component 1`] = `
+<React.Fragment>
+  <WithStyles(ListItem)
+    button={true}
+    key="Settings"
+    onClick={[Function]}
+  >
+    <WithStyles(ListItemIcon)>
+      <pure(Star) />
+    </WithStyles(ListItemIcon)>
+    <WithStyles(ListItemText)
+      primary="Settings"
+    />
+  </WithStyles(ListItem)>
+</React.Fragment>
+`;

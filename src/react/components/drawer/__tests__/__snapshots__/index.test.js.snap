@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components/shallow renders app component 1`] = `
+exports[`Components/Drawer renders a component 1`] = `
 <div
   className="PersistentDrawer-root-1 app-plugin-name"
 >
