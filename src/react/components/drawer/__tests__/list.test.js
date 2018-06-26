@@ -20,11 +20,11 @@ describe('Components/DrawerList', () => {
     props.onClick.mockReset()
   })
 
-  it('renders component', () => {
+  test('renders component', () => {
     expect(shallow(<DrawerList {...props} />)).toMatchSnapshot()
   })
 
-  it("it's listItems invoke onClick", () => {
+  test("it's listItems invoke onClick", () => {
     const wrapper = shallow(<DrawerList {...props} />)
     const element = wrapper.find(ListItem)
     element.simulate('click')

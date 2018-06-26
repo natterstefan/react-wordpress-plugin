@@ -10,7 +10,7 @@ describe('utils/apiClient', () => {
     moxios.uninstall()
   })
 
-  it('calls an GET endpoint properly', async () => {
+  test('calls an GET endpoint properly', async () => {
     moxios.stubOnce('GET', /.*/, {
       status: 200,
       response: {
@@ -25,7 +25,7 @@ describe('utils/apiClient', () => {
     expect(config.params).toEqual({ _wpnonce: wpGlobals.nonce })
   })
 
-  it('calls an POST endpoint properly', async () => {
+  test('calls an POST endpoint properly', async () => {
     moxios.stubOnce('POST', /.*/, {
       status: 200,
       response: {
@@ -40,7 +40,7 @@ describe('utils/apiClient', () => {
     expect(config.params).toEqual({ _wpnonce: wpGlobals.nonce })
   })
 
-  it('calls an endpoint with additional query parameters properly', async () => {
+  test('calls an endpoint with additional query parameters properly', async () => {
     moxios.stubOnce('GET', /.*/, {
       status: 200,
       response: {

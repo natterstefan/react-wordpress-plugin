@@ -12,12 +12,12 @@ describe('Components/Drawer', () => {
     content: getPages(),
   }
 
-  it('renders a component', () => {
+  test('renders a component', () => {
     // test withStyles ==> https://github.com/mui-org/material-ui/issues/9266#issuecomment-349447137
     expect(shallow(<Drawer {...props} />).dive()).toMatchSnapshot()
   })
 
-  it('renders DrawerList component with the correct props', () => {
+  test('renders DrawerList component with the correct props', () => {
     const wrapper = shallow(<Drawer {...props} />).dive()
 
     expect(wrapper.find(DrawerList).length).toEqual(1)
@@ -25,7 +25,7 @@ describe('Components/Drawer', () => {
     expect(wrapper.find(DrawerList).props().onClick).toEqual(wrapper.instance().onPageChange)
   })
 
-  it('renders PageWrapper component with the correct props', async () => {
+  test('renders PageWrapper component with the correct props', async () => {
     const wrapper = shallow(<Drawer {...props} />).dive()
     const element = wrapper.find(PageWrapper)
     expect(element.length).toEqual(1)
@@ -40,7 +40,7 @@ describe('Components/Drawer', () => {
     expect(wrapper.find(PageWrapper).props().component).toEqual(props.content[1])
   })
 
-  it('handles onPageChange properly', () => {
+  test('handles onPageChange properly', () => {
     const wrapper = shallow(<Drawer {...props} />).dive()
     const instance = wrapper.instance()
     expect(instance.state).toEqual({ open: false, pageIndex: 0 })
@@ -49,7 +49,7 @@ describe('Components/Drawer', () => {
     expect(instance.state).toEqual({ open: false, pageIndex: 1 })
   })
 
-  it('handles Drawer interactions properly', () => {
+  test('handles Drawer interactions properly', () => {
     const wrapper = shallow(<Drawer {...props} />).dive()
     const instance = wrapper.instance()
     expect(instance.state).toMatchObject({ open: false })

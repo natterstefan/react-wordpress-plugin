@@ -1,8 +1,8 @@
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import StarIcon from '@material-ui/icons/Star'
 
-import ManagePage from '../pages/manage'
-import SettingsPage from '../pages/settings'
+import ManagePage from './manage'
+import SettingsPage from './settings'
 
 export default props => [
   {
