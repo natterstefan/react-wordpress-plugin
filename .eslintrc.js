@@ -1,5 +1,5 @@
 module.exports = {
-  extends: '@natterstefan/eslint-config-ns',
+  extends: 'eslint-config-ns',
   globals: {
     wpGlobals: true,
     nextTick: true,
